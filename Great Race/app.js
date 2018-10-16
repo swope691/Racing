@@ -58,18 +58,17 @@ function startRace() {
       function runner1Wins(){
         clearInterval(racing)
         startPos1 = "250px"
-        ///document.getElementById("runner1").style.left = "750px";
-        //document.getElementbyId("runner1").style.visibility = "hidden";
+        document.getElementById("runner1").style.left = "750px";
+        document.getElementbyId("runner1").style.visibility = "hidden";
        // document.getElementById("runner2").style.left = "750px";
-        stopRace()
         alert("runner1")
       }
       function runner2Wins(){
         clearInterval(racing)
         startPos2 = "250px"
         alert("runner2")
-        ///document.getElementById("runner2").style.left = "750px";
-        //document.getElementbyId("runner2").style.visibility = "hidden";
+        document.getElementById("runner2").style.left = "750px";
+        document.getElementbyId("runner2").style.visibility = "hidden";
         //document.getElementById("runner1").style.left = "750px";
       }
         }
