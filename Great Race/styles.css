@@ -1,0 +1,52 @@
+body, html{
+    height:100%;
+}
+
+.bg {
+    background-image: url("stadium.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#runner1 {
+    width:150px; 
+    height:100px;
+    position: absolute; 
+    left:250px; 
+    top: 300px; 
+    
+}
+
+#runner2 {
+    width:150px;
+    height: 150px;
+    position: absolute; 
+    left:250px; 
+    top: 400px;
+}
+
+#startButton {
+    width:100px; 
+    height:100px; 
+    position: absolute; 
+    top: 370px; 
+    left: 750px; 
+    cursor:pointer;
+}
+
+#resetButton{
+    width:100px; 
+    height:100px; 
+    position:absolute; 
+    right:0px; 
+    cursor:pointer;
+}
+
+.winner {
+    position: absolute;
+    left: 560px;
+    top: 100px;
+    
+}
