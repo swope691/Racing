@@ -5,17 +5,20 @@ var race1;
 var race2;
 var imageArray = ["runner1.png", "runner2.png"]
 function resetRace(){
-window.location.reload();
+resetButton.style.display = "none";
+runner1.style.left = "250px";
+runner2.style.left = "250px";
+document.getElementById("runner1").style.visibility = "visible";
+document.getElementById("runner2").style.visibility = "visible";
+document.getElementById("startButton").style.visibility = "visible";
 }
-
-
     var startPos1 = 250;
     var startPos2 = 250;
 
   function racing1()
   {
     ranNum = Math.floor(Math.random()*2);
-    distance = Math.floor(Math.random()*250);
+    distance = Math.floor(Math.random()*550);
     
     if(ranNum == 0){
 
@@ -33,11 +36,13 @@ window.location.reload();
       {
         clearInterval(racing);
         runner1Wins();
+        return;
       }
       else if(race2 > 1200)
       {
         clearInterval(racing);
-        runner2Wins();             
+        runner2Wins();       
+        return;      
       }
 
     }
@@ -51,12 +56,14 @@ function startRace() {
 } 
 
       function runner1Wins(){    
+        resetButton.style.display = "inline";
         document.getElementById("runner2").style.visibility = "hidden";
         document.getElementById("runner1").style.visibility = "hidden";
         document.getElementById("resetButton").src = imageArray[0]
         document.getElementById("resetButton").style.visibility = "visible";
       }
       function runner2Wins(){
+        resetButton.style.display = "inline";
         document.getElementById("runner1").style.visibility = "hidden";  
         document.getElementById("runner2").style.visibility = "hidden";
         document.getElementById("resetButton").src = imageArray[1]
