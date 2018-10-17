@@ -3,6 +3,7 @@ var ranNum;
 var racing;
 var race1;
 var race2;
+var imageArray = ["runner1.png", "runner2.png"]
 function resetRace(){
 window.location.reload();
 }
@@ -31,13 +32,11 @@ window.location.reload();
     if (race1 > 1200)
       {
         clearInterval(racing);
-        alert("clear interval");
         runner1Wins();
       }
       else if(race2 > 1200)
       {
         clearInterval(racing);
-        alert("clear interval");
         runner2Wins();             
       }
 
@@ -52,12 +51,16 @@ function startRace() {
 } 
 
       function runner1Wins(){    
-        alert("runner1");
         document.getElementById("runner2").style.visibility = "hidden";
+        document.getElementById("runner1").style.visibility = "hidden";
+        document.getElementById("resetButton").src = imageArray[0]
+        document.getElementById("resetButton").style.visibility = "visible";
       }
       function runner2Wins(){
-        alert("runner2"); 
         document.getElementById("runner1").style.visibility = "hidden";  
+        document.getElementById("runner2").style.visibility = "hidden";
+        document.getElementById("resetButton").src = imageArray[1]
+        document.getElementById("resetButton").style.visibility = "visible";
       }
         
     
