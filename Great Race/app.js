@@ -10,15 +10,14 @@ window.location.reload();
 
   function racing1()
   {
-   racing = setInterval(startRace, 1000);
+    var ranNum = Math.floor(Math.random()*2);
+    distance = Math.floor(Math.random()*50);
+    racing = setInterval(startRace, 1000);
 
   }
 function startRace() {
-   racing1()
-    var ranNum = Math.floor(Math.random()*2);
-    distance = Math.floor(Math.random()*50);
-    document.getElementById('startButton').style.visibility='hidden';
-    document.getElementById('resetButton').style.visibility-'hidden';
+  racing = setInterval(racing1, 1000);
+
 
 
 
@@ -58,18 +57,14 @@ function startRace() {
       function runner1Wins(){
         clearInterval(racing)
         startPos1 = "250px"
-        document.getElementById("runner1").style.left = "750px";
-        document.getElementbyId("runner1").style.visibility = "hidden";
-       // document.getElementById("runner2").style.left = "750px";
+        
         alert("runner1")
       }
       function runner2Wins(){
         clearInterval(racing)
         startPos2 = "250px"
         alert("runner2")
-        document.getElementById("runner2").style.left = "750px";
-        document.getElementbyId("runner2").style.visibility = "hidden";
-        //document.getElementById("runner1").style.left = "750px";
+        
       }
         }
         function stopRace(){
