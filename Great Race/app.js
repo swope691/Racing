@@ -1,5 +1,6 @@
 var distance;
 var racing;
+var ranNum;
 function resetRace(){
 window.location.reload();
 }
@@ -10,67 +11,50 @@ window.location.reload();
 
   function racing1()
   {
-    var ranNum = Math.floor(Math.random()*2);
+    ranNum = Math.floor(Math.random()*2);
     distance = Math.floor(Math.random()*50);
     racing = setInterval(startRace, 1000);
+    if(ranNum == 0){
 
-  }
-function startRace() {
-  racing = setInterval(racing1, 1000);
+      var race1 = startPos1 + distance;
+      startPos1 += distance;
+      document.getElementById("runner1").style.left = `${race1}px`;
+    }
+    else if (ranNum == 1 ){
+      var race2 = startPos2 + distance;
+      startPos2 += distance;
+      document.getElementById("runner2").style.left = `${race2}px`;
+    }
 
 
-
-
-  if(ranNum == 0){
-
-    var race1 = startPos1 + distance;
-    startPos1 += distance;
-    document.getElementById("runner1").style.left = `${race1}px`;
     if (race1 > 1200)
       {
-        clearInterval(racing)
-        runner1Wins()
-        
-
-        
+        clearInterval(racing1);
+        alert("clear interval");
+        runner1Wins();
       }
-    } 
-
-    else{
-
-    var race2 = startPos2 + distance;
-    startPos2 += distance;
-    document.getElementById("runner2").style.left = `${race2}px`;
-    }
-    if (race2 > 1200)
+      else if(race2 > 1200)
       {
-        clearInterval(racing)
-        runner2Wins()
-     
-
-        
+        clearInterval(racing1);
+        alert("clear interval");
+        runner2Wins();             
       }
-     
 
+    }
+  
+function startRace() {
+  racing = setInterval(racing1, 1000);
+} 
 
-    
       function runner1Wins(){
-        clearInterval(racing)
-        startPos1 = "250px"
-        
-        alert("runner1")
+        startPos1 = "250px";       
+        alert("runner1");
       }
       function runner2Wins(){
-        clearInterval(racing)
-        startPos2 = "250px"
-        alert("runner2")
-        
+        startPos2 = "250px";
+        alert("runner2");   
       }
-        }
-        function stopRace(){
-          clearInterval(racing);
-        }
-      
+        
     
   
 
